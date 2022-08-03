@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { useStyles } from './styles';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Fade } from '@material-ui/core';
-import { EliminacaoCard } from '../../components/EliminacaoCard';
+import { VotacaoCard } from '../../components/VotacaoCard';
 import { Box } from '@material-ui/system';
 import { RECAPTCHA_KEYS } from '../../constants/recaptchaKeys';
+import { images } from '../../assets/images';
 
 export const Home = () => {
     const [showCaptcha, setShowCaptcha] = useState(true);
@@ -13,6 +14,13 @@ export const Home = () => {
     function onChange() {
         setShowCaptcha(false);
     }
+
+    const votacaoInfo = {
+        infoParticipantes: [
+            { img: images.participante1, nome: 'Participante 1', sexo: 'f' },
+            { img: images.participante2, nome: 'Participante 2', sexo: 'm' },
+        ],
+    };
 
     return (
         <Box className={classes.centralBox}>
@@ -27,7 +35,7 @@ export const Home = () => {
                 timeout={{ enter: 500 }}
             >
                 <div className={classes.fadeCard}>
-                    <EliminacaoCard />
+                    <VotacaoCard info={votacaoInfo} />
                 </div>
             </Fade>
         </Box>
