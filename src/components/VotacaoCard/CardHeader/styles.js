@@ -1,19 +1,25 @@
 import { makeStyles } from '@material-ui/styles';
+import { APP_COLORS } from '../../../constants/appColors';
 
 export const useStyles = makeStyles(() => ({
+    headerBox: {
+        paddingBottom: '10px',
+    },
     titulo: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         paddingTop: '5px',
-        paddingBottom: '10px',
+        paddingBottom: '15px',
     },
     icone: {
-        height: '30px',
-        width: '30px',
+        height: '35px',
+        width: '35px',
     },
     texto: {
-        fontSize: '18px !important',
+        fontSize: '25px',
         paddingLeft: '10px',
+        color: APP_COLORS.textGrey,
+        margin: '0px',
     },
 }));
