@@ -1,13 +1,13 @@
 import React from 'react';
-import { images } from '../../../assets/images';
 import { useStyles } from './styles';
+import CloseIcon from '@mui/icons-material/Close';
 
 export const CloseButton = () => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
             <div className={classes.border}>
-                <img src={images.closeButton} className={classes.icon} alt='Botao Fechar' />
+                <CloseIcon className={classes.icon} alt='Botao Fechar' />
             </div>
         </div>
     );

@@ -4,10 +4,10 @@ import { APP_COLORS } from '../../../constants/appColors';
 export const useStyles = makeStyles(() => ({
     root: {
         position: 'absolute',
-        top: '-15px',
-        right: '-15px',
-        width: '30px',
-        height: '30px',
+        top: '-18px',
+        right: '-18px',
+        width: '36px',
+        height: '36px',
     },
     border: {
         borderRadius: '30px',
@@ -22,10 +22,12 @@ export const useStyles = makeStyles(() => ({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'white',
+        '& .MuiSvgIcon-root': {
+            width: '60%',
+            height: '60%',
+        },
     },
     icon: {
-        width: '50%',
-        height: '50%',
         transform: 'rotate(45deg)',
     },
 }));
