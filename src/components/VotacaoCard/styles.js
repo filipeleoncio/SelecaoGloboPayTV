@@ -10,6 +10,8 @@ export const useStyles = makeStyles(() => ({
         borderWidth: '5px',
         borderRadius: '5px',
         position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
     },
     cardTop: {
         padding: '15px',

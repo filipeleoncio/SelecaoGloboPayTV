@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 import { CardContent } from './CardContent';
+import { CardFooter } from './CardFooter';
 import { CardHeader } from './CardHeader';
 import { CloseButton } from './CloseButton';
 import { useStyles } from './styles';
@@ -14,6 +15,7 @@ export const VotacaoCard = forwardRef(({ info }, ref) => {
                 <CardHeader />
                 <CardContent info={info} />
             </div>
+            <CardFooter />
         </div>
     );
 });

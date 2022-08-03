@@ -16,4 +16,5 @@ export const VOTACAO_TEXT = {
             SMS para <b>8002</b>
         </>
     ),
+    buttonConfirmarText: 'Envie seu voto agora',
 };
