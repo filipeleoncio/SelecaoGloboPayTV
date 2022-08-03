@@ -3,12 +3,15 @@ import { APP_COLORS } from '../../constants/appColors';
 
 export const useStyles = makeStyles(() => ({
     mainCard: {
-        width: '550px',
-        height: '500px',
+        width: '635px',
+        height: '600px',
         borderStyle: 'solid',
         borderColor: APP_COLORS.primaryGrey,
         borderWidth: '5px',
         borderRadius: '5px',
         position: 'relative',
+    },
+    cardTop: {
+        padding: '15px',
     },
 }));
