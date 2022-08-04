@@ -1,21 +1,18 @@
-import React, { forwardRef } from 'react';
-import { CardContent } from './CardContent';
-import { CardFooter } from './CardFooter';
+import React from 'react';
 import { CardHeader } from './CardHeader';
 import { CloseButton } from './CloseButton';
 import { useStyles } from './styles';
 
-export const VotacaoCard = forwardRef(({ info }, ref) => {
+export const DefaultCard = ({ children }) => {
     const classes = useStyles();
 
     return (
-        <div className={classes.mainCard} ref={ref}>
+        <div className={classes.mainCard}>
             <CloseButton />
             <div className={classes.cardTop}>
                 <CardHeader />
-                <CardContent info={info} />
             </div>
-            <CardFooter />
+            {children}
         </div>
     );
-});
+};

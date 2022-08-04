@@ -1,4 +1,4 @@
-import { VOTACAO_TEXT } from '../../../../constants/votacaoText';
+import { VOTACAO_TEXT } from '../../../../constants/votacao';
 
 export function getDescricaoParticipante(index, nome, sexo) {
     return index === 1

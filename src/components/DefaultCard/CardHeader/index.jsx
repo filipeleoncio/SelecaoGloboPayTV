@@ -1,7 +1,7 @@
 import React from 'react';
 import { images } from '../../../assets/images';
 import { useStyles } from './styles';
-import { VOTACAO_TEXT } from '../../../constants/votacaoText';
+import { VOTACAO_TEXT } from '../../../constants/votacao';
 import { CustomDivider } from './CustomDivider';
 
 export const CardHeader = () => {

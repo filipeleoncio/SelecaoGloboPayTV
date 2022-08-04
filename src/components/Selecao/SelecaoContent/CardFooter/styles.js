@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/styles';
-import { APP_COLORS } from '../../../constants/appColors';
+import { APP_COLORS } from '../../../../constants/appColors';
 
 export const useStyles = makeStyles(() => ({
     footerBox: {

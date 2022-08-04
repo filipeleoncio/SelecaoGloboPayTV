@@ -14,6 +14,6 @@ export const useStyles = makeStyles(() => ({
         flexDirection: 'column',
     },
     cardTop: {
-        padding: '15px',
+        padding: '15px 15px 0 15px',
     },
 }));

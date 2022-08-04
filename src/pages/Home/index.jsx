@@ -1,41 +1,72 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useStyles } from './styles';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Fade } from '@material-ui/core';
-import { VotacaoCard } from '../../components/VotacaoCard';
 import { Box } from '@material-ui/system';
 import { RECAPTCHA_KEYS } from '../../constants/recaptchaKeys';
-import { images } from '../../assets/images';
+import { useDispatch } from 'react-redux';
+import { ParedaoActions } from '../../store/ducks/paredao';
+import { VOTACAO_STEPS as STEPS } from '../../constants/votacao';
+import { Selecao } from '../../components/Selecao';
+import { Sucesso } from '../../components/Sucesso';
 
 export const Home = () => {
-    const [showCaptcha, setShowCaptcha] = useState(true);
+    const [currentIndex, setCurrentIndex] = useState(STEPS.INICIO);
     const classes = useStyles();
+    const dispatch = useDispatch();
 
-    function onChange() {
-        setShowCaptcha(false);
-    }
+    useEffect(() => {
+        dispatch(ParedaoActions.getParedaoRequest());
+    }, [dispatch]);
 
-    const votacaoInfo = {
-        infoParticipantes: [
-            { img: images.participante1, nome: 'Participante 1', sexo: 'f' },
-            { img: images.participante2, nome: 'Participante 2', sexo: 'm' },
-        ],
+    const goToVotacao = () => {
+        setCurrentIndex(STEPS.SELECAO);
+    };
+
+    const goToSucesso = () => {
+        setCurrentIndex(STEPS.SUCESSO);
+    };
+
+    const getFadeProps = (index) => {
+        let fadeProps = { in: currentIndex === index };
+        switch (index) {
+            case STEPS.INICIO:
+                return {
+                    ...fadeProps,
+                    timeout: { enter: 500, exit: 1000 },
+                };
+            case STEPS.SELECAO:
+                return {
+                    ...fadeProps,
+                    style: { transitionDelay: currentIndex === index ? '800ms' : '0ms' },
+                    timeout: { enter: 500, exit: 500 },
+                };
+            case STEPS.SUCESSO:
+                return {
+                    ...fadeProps,
+                    style: { transitionDelay: currentIndex === index ? '500ms' : '0ms' },
+                    timeout: { enter: 500, exit: 500 },
+                };
+            default:
+                return null;
+        }
     };
 
     return (
         <Box className={classes.centralBox}>
-            <Fade in={showCaptcha} appear timeout={{ exit: 1000 }} unmountOnExit>
+            <Fade {...getFadeProps(STEPS.INICIO)}>
                 <div className={classes.fadeCard}>
-                    <ReCAPTCHA sitekey={RECAPTCHA_KEYS.siteKey} onChange={onChange} />
+                    <ReCAPTCHA sitekey={RECAPTCHA_KEYS.siteKey} onChange={goToVotacao} />
                 </div>
             </Fade>
-            <Fade
-                in={!showCaptcha}
-                style={{ transitionDelay: !showCaptcha ? '800ms' : '0ms' }}
-                timeout={{ enter: 500 }}
-            >
+            <Fade {...getFadeProps(STEPS.SELECAO)}>
                 <div className={classes.fadeCard}>
-                    <VotacaoCard info={votacaoInfo} />
+                    <Selecao onAvancar={goToSucesso} />
+                </div>
+            </Fade>
+            <Fade {...getFadeProps(STEPS.SUCESSO)}>
+                <div className={classes.fadeCard}>
+                    <Sucesso />
                 </div>
             </Fade>
         </Box>
