@@ -18,3 +18,9 @@ export const VOTACAO_TEXT = {
     ),
     buttonConfirmarText: 'Envie seu voto agora',
 };
+
+export const VOTACAO_STEPS = {
+    INICIO: 1,
+    SELECAO: 2,
+    SUCESSO: 3,
+};
