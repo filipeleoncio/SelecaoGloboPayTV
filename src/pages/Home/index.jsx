@@ -19,8 +19,8 @@ export const Home = () => {
         dispatch(ParedaoActions.getParedaoRequest());
     }, [dispatch]);
 
-    const goToVotacao = () => {
-        setCurrentIndex(STEPS.SELECAO);
+    const goToVotacao = (value) => {
+        if (value) setCurrentIndex(STEPS.SELECAO);
     };
 
     const goToSucesso = () => {
