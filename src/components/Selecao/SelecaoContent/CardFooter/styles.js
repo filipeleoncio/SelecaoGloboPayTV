@@ -3,9 +3,9 @@ import { APP_COLORS } from '../../../../constants/appColors';
 
 export const useStyles = makeStyles(() => ({
     footerBox: {
+        height: '77.75px',
         borderTop: `1px solid ${APP_COLORS.primaryGrey}`,
         backgroundColor: APP_COLORS.secondaryGrey,
-        flex: '1',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

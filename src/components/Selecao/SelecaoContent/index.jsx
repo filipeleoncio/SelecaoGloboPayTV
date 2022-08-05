@@ -21,9 +21,11 @@ export const SelecaoContent = ({ onAvancar }) => {
     });
 
     const handleClickConfirm = () => {
-        dispatch(ParedaoActions.postVotoRequest(participanteSelecionado));
-        setParticipanteSelecionado(0);
-        onAvancar();
+        if (participanteSelecionado !== 0) {
+            dispatch(ParedaoActions.postVotoRequest(participanteSelecionado));
+            setParticipanteSelecionado(0);
+            onAvancar();
+        }
     };
 
     return (

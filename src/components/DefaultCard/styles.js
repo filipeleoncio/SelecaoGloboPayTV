@@ -4,7 +4,6 @@ import { APP_COLORS } from '../../constants/appColors';
 export const useStyles = makeStyles(() => ({
     mainCard: {
         width: '635px',
-        height: '600px',
         borderStyle: 'solid',
         borderColor: APP_COLORS.primaryGrey,
         borderWidth: '5px',
