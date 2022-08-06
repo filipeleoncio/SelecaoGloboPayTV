@@ -23,7 +23,7 @@ export default class ParedaoService {
         const mockParedaoInfo = {
             porcentagemVotosParticipante1: 65,
             diaHoraInicio: '01/08/2022-20:00:00',
-            diaHoraFim: '05/08/2022-22:00:00',
+            diaHoraFim: '07/08/2022-12:00:00',
         };
         return mockParedaoInfo;
 
