@@ -9,7 +9,7 @@ export const ContentFooter = ({ onClickButton }) => {
     return (
         <div className={classes.footerBox}>
             <Button variant='contained' className={classes.footerButton} onClick={onClickButton}>
-                {VOTACAO_TEXT.buttonConfirmarText}
+                {VOTACAO_TEXT.BUTTON_CONFIRMAR}
             </Button>
         </div>
     );

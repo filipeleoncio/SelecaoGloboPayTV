@@ -11,7 +11,7 @@ export const CardHeader = () => {
         <div className={classes.headerBox}>
             <div className={classes.titulo}>
                 <img src={images.paredaoIcone} className={classes.icone} alt='Icone de paredao' />
-                <p className={classes.texto}>{VOTACAO_TEXT.titulo}</p>
+                <p className={classes.texto}>{VOTACAO_TEXT.TITULO}</p>
             </div>
             <CustomDivider />
         </div>

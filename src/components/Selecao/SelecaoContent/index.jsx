@@ -23,6 +23,7 @@ export const SelecaoContent = ({ onAvancar }) => {
     const handleClickConfirm = () => {
         if (participanteSelecionado !== 0) {
             dispatch(ParedaoActions.postVotoRequest(participanteSelecionado));
+            dispatch(ParedaoActions.setIdParticipanteSelecionado(participanteSelecionado));
             setParticipanteSelecionado(0);
             onAvancar();
         }
