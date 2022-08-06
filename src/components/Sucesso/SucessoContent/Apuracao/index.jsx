@@ -13,10 +13,12 @@ const circuloDesconsiderado = 19.5;
 const razaoCirculoConsiderado = 0.61;
 
 export const Apuracao = () => {
-    const { diaHoraFim, votosP1 } = useSelector((state) => ({
-        votosP1: state.paredao.porcentagemVotosParticipante1,
+    const { diaHoraFim, votosP1Decimal } = useSelector((state) => ({
+        votosP1Decimal: state.paredao.porcentagemVotosParticipante1,
         diaHoraFim: state.paredao.diaHoraFim,
     }));
+
+    const votosP1 = Math.floor(votosP1Decimal);
 
     const classes = useStyles({ votosP1 });
 
