@@ -10,6 +10,8 @@
 
 5. Escolha de uso do redux sagas ao invés de Context e hooks personalizados para chamadas de API, devido a maior e melhor escalabilidade.
 
+====================
+
 #### Implementações abandonadas por baixa prioridade e falta de tempo
 
 **Frontend**
@@ -32,6 +34,8 @@ a) /dados-paredao-vigente -> retorna as informações sobre os participantes nec
 b) /realizar-voto -> acumula um voto no participante escolhido, e retorna a apuração da votação até o momento (porcentagem de votos para o participante 1, dia de encerramento da votação).
 c) /dados-paredao -> recebe o nome de dois participantes e retorna as informações a respeito do resultado do paredão entre eles.
 
+====================
+
 #### Instalação do projeto
 
 **Tenha instalado Node JS a partir da versão 16**
@@ -53,6 +57,8 @@ c) /dados-paredao -> recebe o nome de dois participantes e retorna as informaç�
 4. Executar o projeto:
 
     npm start
+
+====================
 
 #### Instruções de execução
 
