@@ -29,7 +29,7 @@ export const Apuracao = () => {
 
     const winning = votosP1 > 50 ? 1 : votosP1 < 50 ? 2 : 0;
 
-    const [tempoRestante, setTempoRestante] = useState(0);
+    const [tempoRestante, setTempoRestante] = useState(-1);
     const tempoRestanteString = useRef('');
     const tempoRestanteInicial = useRef(0);
 
@@ -37,21 +37,24 @@ export const Apuracao = () => {
         if (diaHoraFim.length > 0 && tempoRestanteInicial.current === 0) {
             const diaFim = stringDateToDate(diaHoraFim);
             const agora = new Date().getTime();
-            const tempoRestanteMs = Math.abs(diaFim.getTime() - agora) / 1000;
-
+            let tempoRestanteMs = (diaFim.getTime() - agora) / 1000;
+            if (tempoRestanteMs < 0) tempoRestanteMs = 0;
             tempoRestanteString.current = milisegundoToDHMS(tempoRestanteMs);
             setTempoRestante(tempoRestanteMs);
         }
     }, [diaHoraFim]);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            tempoRestanteString.current = milisegundoToDHMS(tempoRestante);
-            setTempoRestante((prev) => prev - 1);
-        }, 1000);
+        let interval;
+        if (tempoRestante > 0) {
+            interval = setInterval(() => {
+                tempoRestanteString.current = milisegundoToDHMS(tempoRestante);
+                setTempoRestante((prev) => prev - 1);
+            }, 1000);
+        }
 
         return () => {
-            clearInterval(interval);
+            if (interval) clearInterval(interval);
         };
     });
 
