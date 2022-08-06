@@ -54,17 +54,17 @@ export const Home = () => {
 
     return (
         <Box className={classes.centralBox}>
-            <Fade {...getFadeProps(STEPS.INICIO)}>
+            <Fade {...getFadeProps(STEPS.INICIO)} unmountOnExit>
                 <div className={classes.fadeCard}>
                     <ReCAPTCHA sitekey={RECAPTCHA_KEYS.siteKey} onChange={goToVotacao} />
                 </div>
             </Fade>
-            <Fade {...getFadeProps(STEPS.SELECAO)}>
+            <Fade {...getFadeProps(STEPS.SELECAO)} mountOnEnter unmountOnExit>
                 <div className={classes.fadeCard}>
                     <Selecao onAvancar={goToSucesso} />
                 </div>
             </Fade>
-            <Fade {...getFadeProps(STEPS.SUCESSO)}>
+            <Fade {...getFadeProps(STEPS.SUCESSO)} mountOnEnter>
                 <div className={classes.fadeCard}>
                     <Sucesso />
                 </div>
