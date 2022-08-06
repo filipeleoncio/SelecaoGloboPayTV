@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ParedaoActions } from '../../../store/ducks/paredao';
-import { ContentFooter } from './CardFooter';
+import { ContentFooter } from './ContentFooter';
 import { Participante } from './Participante';
 import { useStyles } from './styles';
 
